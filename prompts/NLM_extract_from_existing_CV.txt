@@ -1,0 +1,22 @@
+I have an RTF file with a list of books and webpages in CV format. 
+
+I need this data extracted as TSV formatted data into the following fields
+
+Authors	Title	Year	Date	Source	Publisher	ArticleURL	Type	DOI	Volume	Issue	StartPage	EndPage	Additional Pages	ReviewType	Term	
+
+Year is the calendar year. Date is the Month or Day, Month. 
+
+Source is the name of the publication (e.g The New York Times, Artforum, Art Documentation)
+
+Publisher is for books, which should include the location if present. for example:  Berkeley: University of California Press
+
+Type is a place to note if it is a Book. 
+
+Volume and Issue are for peer reviewed journals. 
+
+ReviewType is one of the following:
+review
+discussion
+mention
+
+Term is the work of art mentioned at the very end of the entry, after the ReviewType. For example "AfterSherrieLevine.com, The Real Costs" or "AfterSherrieLevine.com". There may be one entry, or more than one entry. Treat it as a string, with commas. 

@@ -1,0 +1,52 @@
+Remember this: These documents are all articles that discuss the work of Michael Mandiberg. Michael Mandiberg is an artist and a co-founder of a wikipedia project called Art+Feminism. 
+
+Here are some of their projects that are likely to be discussed: 
+
+Taking Stock,
+The Magnificent Gatsby and Ethics
+The Zoom Paintings,
+Live Study,
+Postmodern Times
+Quantified Self Portrait,
+Print Wikipedia, 
+Art + Feminism
+New York Arts Practicum, New York.
+Under the Floorboards.
+Laser Cut Books includes SPEED DIAL, GOOGLE, COASTS, DATABASE, OLD NEWS, OMG LOL, SPELLCHECK.
+FDIC Insured.
+HowMuchItCosts.us,
+Bright Bike.
+Bright Idea Shade. 
+Real Costs, 
+Oil Standard
+IN Network.
+All Haiku, All the Time.
+Bush Poll,
+First Person
+How did we go a whole year without this?
+As Amy
+The Essential Guide to Performing Michael Mandiberg
+AfterSherrieLevine.com
+AfterWalkerEvans.com
+Freelance Conceptual Artist, 
+Shop Mandiberg, 
+
+I need the following info about each of these documents, in CSV format: 
+
+Filename, Authors, Title, Year, Date, Source, Publisher, ArticleURL, Type, DOI, Volume, Issue, StartPage, EndPage, Additional Pages, ReviewType, Term, 
+
+Year is the calendar year. Date is the Month or Day, Month. 
+
+Source is the name of the publication (e.g The New York Times, Artforum, Art Documentation)
+
+Publisher is for books, which should include the location if present. for example:  Berkeley: University of California Press
+
+Type is a place to note if it is a Book. 
+
+Volume and Issue are for peer reviewed journals. 
+
+ReviewType is the level of discussion. Please tell me whether the discussion of the project is the focus of one sentence, a paragraph, several paragraphs, or the full article. Most of the full articles will be case studies of Art+Feminism events. 
+
+Term is the work of art mentioned at the very end of the entry, after the ReviewType. For example "AfterSherrieLevine.com, The Real Costs" or "AfterSherrieLevine.com". There may be one entry, or more than one entry. Treat it as a string, with commas. 
+
+If you cannot extract any information from the file, please create an entry with the filename, and leave the rest blank.

@@ -3,11 +3,13 @@ import pandas as pd
 import requests
 import numpy as np
 
-# Load CSV data
-input_file = 'test_data.csv'
-# input_file = 'search_data.csv'
-output_path = 'cleaned_data.csv'
+IS_TEST = False
 
+# Load CSV data
+test_file = 'test_data.csv'
+af_file = 'af.csv'
+input_file = 'search_data.csv'
+output_path = 'cleaned_data.csv'
 
 def make_filename(row):
     filename =  f"{row['Authors'].replace(' ', '_').replace(',', '_')}_{row['Title'].replace(' ', '_')}.pdf"
@@ -19,10 +21,25 @@ def make_filename(row):
     return filename
 
 # Read CSV
-df = pd.read_csv(input_file)
+
+if IS_TEST:
+    df = pd.read_csv(test_file)
+else:
+    df = pd.read_csv(input_file)
+    df_af = pd.read_csv(af_file)
+    df = pd.concat([df, df_af])
+
 df = df.replace({np.nan: None})
 
 print("total items", len(df))
+
+# drop rows where column Mandiberg is FALSE
+df_true = df[df['Mandiberg'] == True]
+df_fulltext = df[df['Check Fulltext'] == True]
+df = pd.concat([df_true, df_fulltext])
+
+print("total TRUE items", len(df))
+
 # 1. Remove exact duplicates
 df = df.drop_duplicates()
 
@@ -64,8 +81,8 @@ print(df_titles)
 # 3. for each row in grouped_df, find the first row in df that match the Authors, Title, Year, Source, and add that to merged_df
 merged_df = pd.DataFrame(columns=df.columns)
 for _, row in df_titles.iterrows():
-    print("\n\n new row")
-    print(row)
+    # print("\n\n new row")
+    # print(row)
 
     if row['Year'] is None:
         matches = df[(df['Authors'] == row['Authors'])  & 
@@ -80,8 +97,8 @@ for _, row in df_titles.iterrows():
                     (df['Year'] == row['Year']) ]
     if not matches.empty:
         match = matches.iloc[0]
-        print("\n\n match")
-        print(match)
+        # print("\n\n match")
+        # print(match)
         merged_df = pd.concat([merged_df, match.to_frame().T], ignore_index=True)
     else:
         print(">>>>  No match found for row:")

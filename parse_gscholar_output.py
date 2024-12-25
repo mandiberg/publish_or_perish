@@ -4,13 +4,14 @@ import requests
 import numpy as np
 
 # Load CSV data
-input_file = 'search_data.csv'
+input_file = 'test_data.csv'
+# input_file = 'search_data.csv'
 output_path = 'cleaned_data.csv'
 
 
 def make_filename(row):
     filename =  f"{row['Authors'].replace(' ', '_').replace(',', '_')}_{row['Title'].replace(' ', '_')}.pdf"
-    filename = filename.replace('?', '').replace(':', '').replace('/', '').replace('\\', '')
+    filename = filename.replace('?', '').replace(':', '').replace('/    ', '').replace('\\', '')
     filename = filename.replace('"', '').replace('*', '').replace('<', '').replace('>', '')
     filename = filename.replace('|', '').replace(' ', '_')
     filename = filename.replace("'", "")
@@ -37,12 +38,26 @@ print("deduped items", (df_titles))
 # add the value of the "Term" column to a list
 # add the list to a new column in df_titles
 
-df_titles['Term'] = df_titles.apply(lambda row: df_titles_terms[
-    (df_titles_terms['Authors'] == row['Authors']) & 
-    (df_titles_terms['Title'] == row['Title']) & 
-    (df_titles_terms['Year'] == row['Year']) & 
-    (df_titles_terms['Source'] == row['Source'])
-]['Term'].tolist(), axis=1)
+terms_list = []
+for _, row in df_titles.iterrows():
+    if row['Year'] is None:
+        terms = df_titles_terms[
+            (df_titles_terms['Authors'] == row['Authors']) & 
+            (df_titles_terms['Year'].isnull())
+        ]['Term'].tolist()
+    else:
+        terms = df_titles_terms[
+            (df_titles_terms['Authors'] == row['Authors']) & 
+            (df_titles_terms['Title'] == row['Title']) & 
+            (df_titles_terms['Year'] == row['Year']) & 
+            (df_titles_terms['Source'] == row['Source'])
+        ]['Term'].tolist()
+    #convert terms to a string, separated by commas
+    terms = ", ".join(terms)
+
+    terms_list.append(terms)
+
+df_titles['Term'] = terms_list
 
 print(df_titles)
 

@@ -1,0 +1,44 @@
+Remember this: These documents are all articles that discuss the work of Michael Mandiberg. Michael Mandiberg is an artist and a co-founder of a wikipedia project called Art+Feminism. 
+
+Here are some of their projects that are likely to be discussed: 
+
+Taking Stock,
+The Magnificent Gatsby and Ethics
+The Zoom Paintings,
+Live Study,
+Postmodern Times
+Quantified Self Portrait,
+Print Wikipedia, 
+Art + Feminism
+New York Arts Practicum, New York.
+Under the Floorboards.
+Laser Cut Books includes SPEED DIAL, GOOGLE, COASTS, DATABASE, OLD NEWS, OMG LOL, SPELLCHECK.
+FDIC Insured.
+HowMuchItCosts.us,
+Bright Bike.
+Bright Idea Shade. 
+Real Costs, 
+Oil Standard
+IN Network.
+All Haiku, All the Time.
+Bush Poll,
+First Person
+How did we go a whole year without this?
+As Amy
+The Essential Guide to Performing Michael Mandiberg
+AfterSherrieLevine.com
+AfterWalkerEvans.com
+Freelance Conceptual Artist, 
+Shop Mandiberg, 
+
+I need the following info about each of these documents, in CSV format: 
+
+Filename, ReviewType, Term, 
+
+Filename is the actual name of the file uploaded (e.g. M_Ros_Tägtström_Musealisering_av_Internetkonst.pdf)
+
+ReviewType is the level of discussion. Please tell me whether the discussion of the project is discussed in: footnotes, one sentence, a paragraph, several paragraphs, or the full article, or it is absent (None). 
+
+Term is the work of art mentioned at the very end of the entry, after the ReviewType. For example "AfterSherrieLevine.com, The Real Costs" or "AfterSherrieLevine.com". There may be one entry, or more than one entry. Treat it as a string, with commas. 
+
+If you cannot extract any information from the file, please create an entry with the filename, and leave the rest blank.

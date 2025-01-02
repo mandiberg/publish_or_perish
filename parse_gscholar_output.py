@@ -4,6 +4,7 @@ import requests
 import numpy as np
 
 IS_TEST = False
+DO_DOWNLOAD = False
 
 # Load CSV data
 test_file = 'test_data.csv'
@@ -13,7 +14,7 @@ output_path = 'cleaned_data.csv'
 
 def make_filename(row):
     filename =  f"{row['Authors'].replace(' ', '_').replace(',', '_')}_{row['Title'].replace(' ', '_')}.pdf"
-    filename = filename.replace('?', '').replace(':', '').replace('/    ', '').replace('\\', '')
+    filename = filename.replace('?', '').replace(':', '').replace('/', '').replace('\\', '').replace('…', '...')
     filename = filename.replace('"', '').replace('*', '').replace('<', '').replace('>', '')
     filename = filename.replace('|', '').replace(' ', '_')
     filename = filename.replace("'", "")
@@ -155,8 +156,9 @@ for index, row in merged_df.iterrows():
         # filename = f"{row['Authors'].replace(' ', '_').replace(',', '_')}_{row['Title'].replace(' ', '_')}.pdf"
         # filename = f"{row['Title'].replace(' ', '_')}.pdf"
         save_path = os.path.join(documents_folder, row['local_filename'])
-        if download_file(url, save_path):
-            merged_df.at[index, 'downloaded'] = True
+        if DO_DOWNLOAD:
+            if download_file(url, save_path):
+                merged_df.at[index, 'downloaded'] = True
 
 # Save the consolidated data to a new CSV
 merged_df.to_csv(output_path, index=False)

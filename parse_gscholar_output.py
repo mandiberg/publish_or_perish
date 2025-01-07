@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import requests
 import numpy as np
+import time
 
 IS_TEST = False
 DO_DOWNLOAD = False
@@ -11,8 +12,15 @@ test_file = 'test_data.csv'
 af_file = 'af.csv'
 input_file = 'search_data.csv'
 output_path = 'cleaned_data.csv'
+lexis = "LexisNexis.csv"
+collected = "manually_collected.csv"
+existing = "existing_cv.csv"
 
 def make_filename(row):
+    if row['Authors'] is None:
+        row['Authors'] = 'Unknown'+str(time.time())
+    if row['Title'] is None:
+        row['Title'] = 'Unknown'+str(time.time())
     filename =  f"{row['Authors'].replace(' ', '_').replace(',', '_')}_{row['Title'].replace(' ', '_')}.pdf"
     filename = filename.replace('?', '').replace(':', '').replace('/', '').replace('\\', '').replace('…', '...')
     filename = filename.replace('"', '').replace('*', '').replace('<', '').replace('>', '')
@@ -28,14 +36,17 @@ if IS_TEST:
 else:
     df = pd.read_csv(input_file)
     df_af = pd.read_csv(af_file)
-    df = pd.concat([df, df_af])
+    df_lexis = pd.read_csv(lexis)
+    df_collected = pd.read_csv(collected)
+    df_existing = pd.read_csv(existing)
+    df = pd.concat([df, df_af, df_lexis, df_collected, df_existing])
 
 df = df.replace({np.nan: None})
 
 print("total items", len(df))
 
-# drop rows where column Mandiberg is FALSE
-df_true = df[df['Mandiberg'] == True]
+# drop rows where column USE_THIS is FALSE
+df_true = df[df['USE_THIS'] == True]
 df_fulltext = df[df['Check Fulltext'] == True]
 df = pd.concat([df_true, df_fulltext])
 
@@ -43,6 +54,8 @@ print("total TRUE items", len(df))
 
 # 1. Remove exact duplicates
 df = df.drop_duplicates()
+
+print("unique TRUE items", len(df))
 
 # 2. Move Authors, Title, Year, Source to new df
 df_titles_terms = df[['Authors', 'Title', 'Year', 'Source', 'Term']]
@@ -59,10 +72,21 @@ print("deduped items", (df_titles))
 terms_list = []
 for _, row in df_titles.iterrows():
     if row['Year'] is None:
-        terms = df_titles_terms[
-            (df_titles_terms['Authors'] == row['Authors']) & 
-            (df_titles_terms['Year'].isnull())
-        ]['Term'].tolist()
+        if row['Title'] is None:
+            terms = df_titles_terms[
+                (df_titles_terms['Authors'] == row['Authors']) & 
+                (df_titles_terms['Title'].isnull()) &
+                (df_titles_terms['Year'].isnull())
+            ]['Term'].tolist()
+            print("term NOPE title", terms, row)
+        else:
+            terms = df_titles_terms[
+                (df_titles_terms['Authors'] == row['Authors']) & 
+                (df_titles_terms['Title'] == row['Title']) &
+                (df_titles_terms['Year'].isnull())
+            ]['Term'].tolist()
+            print("term with title", terms, row['Authors'])
+
     else:
         terms = df_titles_terms[
             (df_titles_terms['Authors'] == row['Authors']) & 
@@ -71,7 +95,8 @@ for _, row in df_titles.iterrows():
             (df_titles_terms['Source'] == row['Source'])
         ]['Term'].tolist()
     #convert terms to a string, separated by commas
-    terms = ", ".join(terms)
+    if terms:
+        terms = ", ".join([term for term in terms if term is not None])
 
     terms_list.append(terms)
 
@@ -85,17 +110,21 @@ for _, row in df_titles.iterrows():
     # print("\n\n new row")
     # print(row)
 
-    if row['Year'] is None:
+    if row['Year'] is None and row['Authors'] is not None:
         matches = df[(df['Authors'] == row['Authors'])  & 
                     (df['Year'].isnull()) ]
-
+    elif row['Authors'] is None:
+        matches = df[(df['Title'] == row['Title'])]
+    elif row['Title'] is None:
+        matches = df[(df['Source'] == row['Source'])]
     else:
     # matches = df[(df['Authors'] == row['Authors']) & 
     #              (df['Title'] == row['Title']) & 
     #              (df['Year'] == row['Year']) & 
     #              (df['Source'] == row['Source'])]
         matches = df[(df['Authors'] == row['Authors'])  & 
-                    (df['Year'] == row['Year']) ]
+                    (df['Year'] == row['Year']) &
+                    (df['Title'] == row['Title']) ]
     if not matches.empty:
         match = matches.iloc[0]
         # print("\n\n match")
@@ -104,6 +133,48 @@ for _, row in df_titles.iterrows():
     else:
         print(">>>>  No match found for row:")
         print(row)
+
+print("merged items", len(merged_df))
+print(merged_df)
+print("df_titles", len(df_titles))
+print(df_titles)
+
+no_author_date_df = df_titles[df_titles['Authors'].isnull() & df_titles['Title'].isnull() & df_titles['Year'].isnull()]
+no_author_date_df.to_csv("no_author_date_FIX_ME_IN_CSV.csv", index=False)
+print("no_author_date", len(no_author_date_df))
+print(no_author_date_df)
+
+no_author_date_merged_df = merged_df[merged_df['Authors'].isnull() & merged_df['Title'].isnull() & merged_df['Year'].isnull()]
+no_author_date_merged_df.to_csv("no_author_date_merged_FIX_ME_IN_CSV.csv", index=False)
+print("no_author_date", len(no_author_date_merged_df))
+print(no_author_date_merged_df)
+
+ 
+
+print("df_titles before removing blanks", len(df_titles))
+df_titles = df_titles[~(df_titles['Authors'].isnull() & df_titles['Title'].isnull() & df_titles['Year'].isnull())]
+merged_df = merged_df[~(merged_df['Authors'].isnull() & merged_df['Title'].isnull() & merged_df['Year'].isnull())]
+print("df_titles after removing blanks", len(df_titles))
+
+merged_df.to_csv("merged_df.csv", index=False)
+df_titles.to_csv("df_titles.csv", index=False)
+
+# unmerged_titles_df = df_titles[~df_titles['Title'].isin(merged_df['Title'])]
+# print("unmerged titles", len(unmerged_titles_df))
+# print(unmerged_titles_df)
+
+# # save unmerged titles to a csv
+# unmerged_titles_df.to_csv("unmerged_titles.csv", index=False)
+
+
+
+# # make a df with rows that are in df_titles but not in merged_df
+# unmerged_df = merged_df[~merged_df['Title'].isin(df_titles['Title'])]
+# print("unmerged titles 2 ", len(unmerged_df))
+# print(unmerged_df)
+
+# # save unmerged titles to a csv
+# unmerged_df.to_csv("unmerged_titles_2.csv", index=False)
 
 # 4. for each row in merged_df, replace the Term with the combined Term from df_titles
 merged_df['Term'] = df_titles['Term'].values

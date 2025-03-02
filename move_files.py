@@ -3,21 +3,38 @@ import pandas as pd
 import requests
 import numpy as np
 
+# runs a test on a small dataset
 IS_TEST = False
+
+# I think this is for removing FALSE items where it doesn't mention or is only a citation
 IS_CLEANUP = False
+
+# Set these to True to only process one of the CSV files
+# otherwise, it will process both
+IS_AF_ONLY = False
+IS_MM_ONLY = True
 
 # Load CSV data
 test_file = 'test_data.csv'
 af_file = 'af.csv'
-input_file = 'search_data.csv'
+input_file = 'mm_all.csv'
 output_path = 'cleaned_data_moving.csv'
-documents_folder = 'documents_test'
+documents_folder = 'documents'
 subfolder = 'check'
+
+# two options: 'move' or 'copy'
 move_copy = 'move'
 
 if IS_CLEANUP:
-    output_path = 'cleaned_data_moving_cleanup.csv'
-    subfolder = 'cleanup'
+    if IS_AF_ONLY:
+        subfolder = 'cleanup_af'
+        output_path = 'cleaned_data_af_cleanup.csv'
+    elif IS_MM_ONLY:
+        subfolder = 'cleanup_mm'
+        output_path = 'cleaned_data_mm_cleanup.csv'
+    else:
+        subfolder = 'cleanup'
+        output_path = 'cleaned_data_moving_cleanup.csv'
     move_copy = 'move'
     # true_column = 'Check Fulltext'
 
@@ -34,27 +51,44 @@ def make_filename(row):
     print(f"Filename: {filename}")
     return filename
 
+def convert_to_bool(val):
+    # It checks if the value, after converting to lowercase, is equal to 'true'. If so, it returns True, otherwise it returns False.
+    return val.lower() == 'true'
+
 # Read CSV
 
 if IS_TEST:
     df = pd.read_csv(test_file)
+elif IS_AF_ONLY:
+    df = pd.read_csv(af_file, converters={"USE_THIS": convert_to_bool})
+elif IS_MM_ONLY:
+    df = pd.read_csv(input_file, converters={"USE_THIS": convert_to_bool})
 else:
-    df = pd.read_csv(input_file)
-    # df_af = pd.read_csv(af_file)
-    # df = pd.concat([df, df_af])
+    df = pd.read_csv(input_file, converters={"USE_THIS": convert_to_bool})
+    df_af = pd.read_csv(af_file, converters={"USE_THIS": convert_to_bool})
+    df = pd.concat([df, df_af])
 
 df = df.replace({np.nan: None})
-
+# print(df.columns)
+# df = df['USE_THIS'].apply(bool)
+print(df)
 print("total items", len(df))
 
+# I don't remember what this does
 if IS_CLEANUP:
-    # drop rows where both df['Mandiberg'] and df['Check Fulltext'] match boolean
-    # both are False
-    df = df[(df['Mandiberg'] == False) & (df['Check Fulltext'] != True)]
+    print("Cleaning up")
+    print(df['USE_THIS'])
+    # print(df[(df['USE_THIS'] == False)])
+    print(df[(df['USE_THIS'] == True)])
+    # only keep rows where df['USE_THIS'] is False
+    # this will move the false ones to the cleanup folder
+    df = df[(df['USE_THIS'] == False)]
+elif IS_TEST:
+    pass
 else:
-    # drop rows where both df['Mandiberg'] OR df['Check Fulltext'] match boolean
+    # drop rows where both df['USE_THIS'] match boolean
     # either are True
-    df = df[(df['Mandiberg'] == True) | (df['Check Fulltext'] == True)]
+    df = df[(df['USE_THIS'] == True)]
 
 
 
@@ -64,11 +98,12 @@ else:
 
 
 # testing
-df = df[df['Check Fulltext'] == True]
+# df = df[df['Check Fulltext'] == True]
 
 
 print("total TRUE items", len(df))
 
+# this part removes duplicates, first by doing exact duplicates, then by removing duplicates based on Authors, Title, Year, Source
 # 1. Remove exact duplicates
 df = df.drop_duplicates()
 
@@ -84,19 +119,14 @@ print("deduped items", (df_titles))
 # apply make_filename to each row and assign the value to a column "local_filename"
 merged_df = df_titles
 merged_df['local_filename'] = merged_df.apply(make_filename, axis=1)
-
 print("merged items", len(merged_df))
 print(merged_df)
 
-
-
-# Remove all instances of "…" from the field Abstract
-# merged_df['Abstract'] = merged_df['Abstract'].str.replace('…', '')
-
-
-# Download files if not already downloaded and mark 'downloaded'
+# moves or copies file from save_path to copy_path
+# move or copy is determined by the move_copy variable
+# checks if file exists at save_path before moving
 def move_file(save_path, copy_path):
-    # print(f"moving {save_path} to {copy_path}")
+    print(f"moving {save_path} to {copy_path}")
     try:
         # Check if file exists
         if os.path.exists(save_path):
@@ -120,35 +150,12 @@ def move_file(save_path, copy_path):
         print(f"Error moving {save_path}: {e}")
         return False
     
-
-    #         response = requests.get(url, stream=True)
-    #         if response.status_code == 200:
-    #             with open(save_path, 'wb') as file:
-    #                 for chunk in response.iter_content(chunk_size=8192):
-    #                     file.write(chunk)
-    #             print(f"Downloaded: {save_path}")
-    #             return True
-    #         else:
-    #             print(f"Failed to download {url}: {response.status_code}")
-    #             return False
-    #     else:
-    #         print(f"File already exists: {save_path}")
-    #         return True
-    # except Exception as e:
-    #     print(f"Error downloading {url}: {e}")
-    #     return False
-
-# Add 'downloaded' column
+# Add 'moved' column
 merged_df['moved'] = False
 
 
-# Process each row for FullTextURL downloads
+# Process each row and move file
 for index, row in merged_df.iterrows():
-    # print (row)
-    # url = row.get('FullTextURL', '')
-    # if pd.notna(url) and url.startswith('http'):
-        # filename = f"{row['Authors'].replace(' ', '_').replace(',', '_')}_{row['Title'].replace(' ', '_')}.pdf"
-        # filename = f"{row['Title'].replace(' ', '_')}.pdf"
     save_path = os.path.join(documents_folder, row['local_filename'])
     copy_path = os.path.join(documents_folder, subfolder, row['local_filename'])
     if move_file(save_path, copy_path):

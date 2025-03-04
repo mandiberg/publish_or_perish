@@ -9,6 +9,7 @@ import json
 import pandas as pd
 from habanero import Crossref
 from thefuzz import fuzz, process
+import csv
 
 # Load CSV data
 input_file = 'cleaned_data.csv'
@@ -35,6 +36,14 @@ VERBOSE = False
 
 # Read CSV
 df = pd.read_csv(input_file)
+try: 
+    df_no_doi = pd.read_csv(NO_DOI_FILE) 
+except: 
+    df_no_doi = pd.DataFrame()
+    # create the file with headers
+    with open(NO_DOI_FILE, 'w', newline='') as no_doi_file:
+        writer = csv.writer(no_doi_file)
+        writer.writerow(["Authors", "Title", "Year"])
 
 def unicode_to_rtf(text):
     """Convert Unicode characters to RTF escape sequences."""
@@ -241,6 +250,7 @@ def flatten_crossref_data(data):
 
 def fuzzy_test(value,search_column_value):
     string_length = len(value)
+    # print("search_column_value", search_column_value)
     search_column_value = search_column_value[:string_length]
     matched_token=fuzz.token_set_ratio(value,search_column_value)
     # print("matched_token", matched_token, value, search_column_value)
@@ -252,6 +262,7 @@ def find_index(df, value, search_column):
     matched_index = None
     for columns in df.index:
         search_column_value = df.at[columns, search_column]
+        if pd.isna(search_column_value): continue
         if fuzzy_test(value,search_column_value):
             matched_index = columns
             # print("Matched index", matched_index)
@@ -268,10 +279,20 @@ def find_index(df, value, search_column):
 def search_crossref(df):
     df_bibtex = load_bibtex_entries()
     cr = Crossref()
-    df = df.head(10)
-    for _, row in df.iterrows():
+    df = df.head(20)
+    if len(df_no_doi) > 0: no_doi_titles = df_no_doi['Title'].to_list()
+    else: no_doi_titles = []
+    for index, row in df.iterrows():
+        matched_index = None
+        flattened_data = None
         doi = row['DOI']
-        if pd.notna(doi) and doi != 0:
+        print("Processing row", row)
+        print("Processing rowTitle", row['Title'])
+        # check to see if we have already failed to look up this DOI
+        if row['Title'] in no_doi_titles:
+            print("Already failed to find DOI for", row['Title'])
+            continue
+        if pd.notna(doi) and doi != 0 and "/" in doi:
             if doi not in df_bibtex['doi'].tolist():
                 print("Searching for DOI:", doi)
                 result = cr.works(doi)
@@ -289,9 +310,16 @@ def search_crossref(df):
                 print("DOI already in bibtex entries", row['Title'])
         else:
             # check to see if the entry is already in the bibtex entries by row['Authors']} {row['Title']} {row['Year']} {row['Source']
-            matched_index_title = find_index(df_bibtex, row['Title'], "title")
+            if not pd.isna(row['Title']):
+                print("Searching for query:", row['Authors'], row['Title'], row['Year'], row['Source'])
+                matched_index_title = find_index(df_bibtex, row['Title'], "title")
             if not pd.isna(row['Source']):
                 matched_index_source = find_index(df_bibtex, row['Source'], "title")
+                if matched_index_source is not None:
+                    matched_index_source = find_index(df_bibtex, row['Source'], "booktitle")
+                    if matched_index_source is not None:
+                        matched_index_source = find_index(df_bibtex, row['Source'], "journal")
+                        print("matched source to source", matched_index_source)
             else: 
                 matched_index_source = None
             # # vendor_name = vendor_df.get_value(row,"Name of vendor")
@@ -308,30 +336,39 @@ def search_crossref(df):
 
             if matched_index_title is not None:
                 print("Matched index TITLE already crossrefed", matched_index_title, df_bibtex.loc[matched_index_title]["title"])
+                matched_index = matched_index_title
             elif matched_index_source is not None:
+                matched_index = matched_index_source
                 print("Matched index SOURCE already crossrefed", matched_index_source, df_bibtex.loc[matched_index_source]["title"])
             else:
                 # NO DOI
                 is_match = False
                 query = f"{row['Authors']} {row['Title']} {row['Year']} {row['Source']}"
                 print("Searching for query:", query)
-                result = cr.works(query=query)
-                if result['status'] == 'ok':
-                    data = result['message']['items'][0]
-                    flattened_data = flatten_crossref_data(data)
-                    print(flattened_data)
-                    # test to see if the title OR source matches the resul
-                    if fuzzy_test(row['Title'],flattened_data['title']):
-                        print("Matched title", row['Title'], data['title'][0])
-                        is_match = True
-                    elif fuzzy_test(row['Source'],flattened_data['title']):
-                        print("Matched SOURCE", row['Source'], data['title'][0])
-                        is_match = True
-                    else:
-                        print("No match found for query:", query, flattened_data['title'])
-                        # save to NO_DOI_FILE
-                        with open(NO_DOI_FILE, 'a') as no_doi_file:
-                            no_doi_file.write(f"{query}\n")
+                try:
+                    result = cr.works(query=query)
+                    if result['status'] == 'ok':
+                        data = result['message']['items'][0]
+                        flattened_data = flatten_crossref_data(data)
+                        print(flattened_data)
+                        # test to see if the title OR source matches the resul
+                        if fuzzy_test(row['Title'],flattened_data['title']):
+                            print("Matched title", row['Title'], data['title'][0])
+                            is_match = True
+                        elif fuzzy_test(row['Source'],flattened_data['title']):
+                            print("Matched SOURCE", row['Source'], data['title'][0])
+                            is_match = True
+                        else:
+                            print("No match found for query:", query, flattened_data['title'])
+                            # save to NO_DOI_FILE
+                            no_doi = [row['Authors'], row['Title'], row['Year'], row['Source']]
+                            with open(NO_DOI_FILE, 'a', newline='') as no_doi_file:
+                                writer = csv.writer(no_doi_file)
+                                writer.writerow(no_doi)
+                except RuntimeError as e:
+                    print(f"RuntimeError: {e} for query: {query}")
+                    continue
+
                 if is_match:
                     # check to see if there is a DOI, and if so, get that bibtex to use bc it is better
                     print("Searched and found:",flattened_data)
@@ -342,10 +379,36 @@ def search_crossref(df):
                     #     flattened_data = flatten_crossref_data(data)
                     # Append the new entry to the existing DataFrame
                     df_bibtex = df_bibtex.append(flattened_data, ignore_index=True)
+        if flattened_data is not None:
+            print("going to add flattened_data", flattened_data)
+            print("to this row of df", df.loc[index])
+            # add flattened_data to df index row
+            # for key, value in flattened_data.items():
+            #     key = "bib_"+key
+            #     df.loc[index, key] = value
+            df.loc[index, "bib_Authors"] = flattened_data.get("author", None)
+            df.loc[index, "bib_Title"] = flattened_data.get("title", None)
+            print("ADDED this row of df", df.loc[index])
+        else:
+            print("No data for this row of df", df.loc[index])
 
+
+
+            # add the bibtext info to existing df. Or add df index to bibtex for later merge?
+            # add unique ID to df index. Non mutable.         "ID": "Wexelbaum_2019",
+            # df.loc[index, "ID"] = flattened_data["ID"]
+            # f"{flattened_data['author']}_{flattened_data['year']}"
+            print("Matched index", matched_index)
+            # Append the new entry to the existing DataFrame
 
     # Write the combined entries back to JSON_FILE
     write_bibtex_entries(df_bibtex)
+
+    # # join the two dataframes on the ID
+    # df = df.set_index('ID')
+    # df_bibtex = df_bibtex.set_index('ID')
+    # df = df.join(df_bibtex, how='left', on='ID')
+    print("df", df)
 
     return df_bibtex
 

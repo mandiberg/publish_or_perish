@@ -17,7 +17,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "115\u2013139",
@@ -37,7 +41,11 @@
         "booktitle": "LGBTQ+ Librarianship in the 21st Century: Emerging Directions of Advocacy and Community Engagement in Diverse Information Environments",
         "isbn": "9781787564732",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "104\u2013122",
@@ -57,7 +65,11 @@
         "booktitle": NaN,
         "isbn": "9781119154907",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "219\u2013238",
@@ -77,7 +89,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "159\u2013176",
@@ -97,7 +113,11 @@
         "booktitle": "The Epistemology of Deceit in a Postdigital Era",
         "isbn": "9783030721541",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1155\u20131167",
@@ -117,7 +137,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "24\u201340",
@@ -137,7 +161,11 @@
         "booktitle": "Social Informatics",
         "isbn": "9783319478807",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "63\u201390",
@@ -157,7 +185,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "64\u201380",
@@ -177,7 +209,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "18\u201327",
@@ -197,7 +233,11 @@
         "booktitle": "Feminist Interventions in Participatory Media",
         "isbn": "9781351238984",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -217,7 +257,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "24\u201343",
@@ -237,7 +281,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "455\u2013479",
@@ -257,7 +305,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "385\u2013402",
@@ -277,7 +329,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1433\u20131445",
@@ -297,7 +353,11 @@
         "booktitle": "The 2024 ACM Conference on Fairness, Accountability, and Transparency",
         "isbn": NaN,
         "collection": "FAccT \u201924",
-        "series": "FAccT \u201924"
+        "series": "FAccT \u201924",
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201317",
@@ -317,7 +377,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "207\u2013228",
@@ -337,7 +401,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201316",
@@ -357,7 +425,11 @@
         "booktitle": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
         "isbn": NaN,
         "collection": "CHI \u201919",
-        "series": "CHI \u201919"
+        "series": "CHI \u201919",
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "459\u2013471",
@@ -377,7 +449,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201369",
@@ -397,7 +473,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "134\u2013142",
@@ -417,7 +497,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201315",
@@ -437,7 +521,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "92\u2013103",
@@ -457,7 +545,11 @@
         "booktitle": "Debates in the Digital Humanities 2016",
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "40\u201376",
@@ -477,7 +569,11 @@
         "booktitle": "Museums and the Challenge of Change",
         "isbn": "9781003043010",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -497,7 +593,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "137\u2013151",
@@ -517,7 +617,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "55\u201368",
@@ -537,7 +641,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "71\u201387",
@@ -557,7 +665,11 @@
         "booktitle": "The Politics of Feminist Foreign Policy and Digital Diplomacy",
         "isbn": "9783031636974",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "60\u201373",
@@ -577,7 +689,11 @@
         "booktitle": "The Digital Future of Museums",
         "isbn": "9780429491573",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "194\u2013211",
@@ -597,7 +713,11 @@
         "booktitle": "Practices of Digital Humanities in India",
         "isbn": "9781003325239",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -617,7 +737,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "226\u2013227",
@@ -637,7 +761,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "35\u201350",
@@ -657,7 +785,11 @@
         "booktitle": "Feminist Histories and Digital Media",
         "isbn": "9780429058073",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "127\u2013129",
@@ -677,7 +809,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "195\u2013213",
@@ -697,7 +833,11 @@
         "booktitle": "The Routledge Handbook of Archaeology and the Media in the 21st Century",
         "isbn": "9781003216155",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "55\u201365",
@@ -717,7 +857,11 @@
         "booktitle": "The Routledge Handbook of Digital Media and Globalization",
         "isbn": "9780367816742",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "258\u2013263",
@@ -737,7 +881,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "445\u2013462",
@@ -757,7 +905,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u20139",
@@ -777,7 +929,11 @@
         "booktitle": "17th International Symposium on Open Collaboration",
         "isbn": NaN,
         "collection": "OpenSym 2021",
-        "series": "OpenSym 2021"
+        "series": "OpenSym 2021",
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "219\u2013232",
@@ -797,7 +953,11 @@
         "booktitle": "Critical Digital Pedagogy in Higher Education",
         "isbn": "9781771993647",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "23\u201337",
@@ -817,7 +977,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "127\u2013166",
@@ -837,7 +1001,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "279\u2013286",
@@ -857,7 +1025,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "435\u2013456",
@@ -877,7 +1049,11 @@
         "booktitle": NaN,
         "isbn": "9781118475331",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "125\u2013136",
@@ -897,7 +1073,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "947\u2013949",
@@ -917,7 +1097,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -937,7 +1121,11 @@
         "booktitle": NaN,
         "isbn": "9783837621884",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "275\u2013294",
@@ -957,7 +1145,11 @@
         "booktitle": "Art Inspiring Transmutations of Life",
         "isbn": "9789048191604",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "250\u2013256",
@@ -977,7 +1169,11 @@
         "booktitle": "12th ACM Conference on Web Science",
         "isbn": NaN,
         "collection": "WebSci \u201920",
-        "series": "WebSci \u201920"
+        "series": "WebSci \u201920",
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201320",
@@ -997,7 +1193,11 @@
         "booktitle": "The Language of Social Media",
         "isbn": "9781137029317",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1017,7 +1217,11 @@
         "booktitle": NaN,
         "isbn": "9781317612322",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "155\u2013161",
@@ -1037,7 +1241,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "22\u201333",
@@ -1057,7 +1265,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1077,7 +1289,11 @@
         "booktitle": NaN,
         "isbn": "9781643150093",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1097,7 +1313,11 @@
         "booktitle": NaN,
         "isbn": "9783319478746",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1117,7 +1337,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1137,7 +1361,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "72\u201377",
@@ -1157,7 +1385,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "139\u2013152",
@@ -1177,7 +1409,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "43\u201352",
@@ -1197,7 +1433,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "60\u201378",
@@ -1217,7 +1457,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1237,7 +1481,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1257,7 +1505,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1277,7 +1529,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "107\u2013130",
@@ -1297,7 +1553,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1317,7 +1577,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1337,7 +1601,11 @@
         "booktitle": "Wikipedia and Academic Libraries",
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "778\u2013779",
@@ -1357,7 +1625,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1377,7 +1649,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1397,7 +1673,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "51\u201356",
@@ -1417,7 +1697,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1437,7 +1721,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "331\u2013346",
@@ -1457,7 +1745,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "195\u2013200",
@@ -1477,7 +1769,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "5\u201330",
@@ -1497,7 +1793,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "107",
@@ -1517,7 +1817,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "100\u2013112",
@@ -1537,7 +1841,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "639\u2013652",
@@ -1557,7 +1865,11 @@
         "booktitle": "Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "28",
@@ -1577,7 +1889,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201315",
@@ -1597,7 +1913,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "S147\u2013S148",
@@ -1617,7 +1937,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "29\u201358",
@@ -1637,7 +1961,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1657,7 +1985,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "168\u2013205",
@@ -1677,7 +2009,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "83\u201391",
@@ -1697,7 +2033,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1\u201322",
@@ -1717,7 +2057,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "92\u201395",
@@ -1737,7 +2081,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1757,7 +2105,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "172\u2013177",
@@ -1777,7 +2129,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "159\u2013176",
@@ -1797,7 +2153,11 @@
         "booktitle": "Stories of Feminist Protest and Resistance",
         "isbn": "9781666913521",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "531\u2013537",
@@ -1817,7 +2177,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "624\u2013636",
@@ -1837,7 +2201,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "364",
@@ -1857,7 +2225,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "157\u2013170",
@@ -1877,7 +2249,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1897,7 +2273,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "57\u201368",
@@ -1917,7 +2297,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "40\u201357",
@@ -1937,7 +2321,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1957,7 +2345,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1977,7 +2369,11 @@
         "booktitle": NaN,
         "isbn": "9780199827251",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": NaN,
@@ -1997,7 +2393,11 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1142\u20131154",
@@ -2017,7 +2417,11 @@
         "booktitle": "Politics and Social Activism",
         "isbn": "9781466694620",
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     },
     {
         "pages": "1047\u20131056",
@@ -2037,6 +2441,1234 @@
         "booktitle": NaN,
         "isbn": NaN,
         "collection": NaN,
-        "series": NaN
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "170\u2013171",
+        "month": "November",
+        "year": "2012",
+        "author": "Spry, Damien",
+        "publisher": "SAGE Publications",
+        "journal": "Media International Australia",
+        "number": "1",
+        "doi": "10.1177/1329878x1214500132",
+        "url": "http://dx.doi.org/10.1177/1329878x1214500132",
+        "issn": "2200-467X",
+        "volume": "145",
+        "title": "Book Review: The Social Media Reader",
+        "ENTRYTYPE": "article",
+        "ID": "Spry_2012",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "99\u2013104",
+        "month": "December",
+        "year": "2009",
+        "author": "Anker, Suzanne",
+        "publisher": "Informa UK Limited",
+        "journal": "Art Journal",
+        "number": "4",
+        "doi": "10.1080/00043249.2009.10791365",
+        "url": "http://dx.doi.org/10.1080/00043249.2009.10791365",
+        "issn": "2325-5307",
+        "volume": "68",
+        "title": "Prime Objects and Body Doubles",
+        "ENTRYTYPE": "article",
+        "ID": "Anker_2009",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "April",
+        "year": "2006",
+        "author": "Gauguet, Bertrand",
+        "publisher": "OpenEdition",
+        "journal": "Critique d\u2019art",
+        "number": "27",
+        "doi": "10.4000/critiquedart.1228",
+        "url": "http://dx.doi.org/10.4000/critiquedart.1228",
+        "issn": "2265-9404",
+        "volume": NaN,
+        "title": "Art et Internet",
+        "ENTRYTYPE": "article",
+        "ID": "Gauguet_2006",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "6\u20137",
+        "month": "January",
+        "year": "2002",
+        "author": "Whitlaw, Robyn and Mandiberg, Michale",
+        "publisher": "University of California Press",
+        "journal": "Afterimage",
+        "number": "4",
+        "doi": "10.1525/aft.2002.29.4.6",
+        "url": "http://dx.doi.org/10.1525/aft.2002.29.4.6",
+        "issn": "2578-8531",
+        "volume": "29",
+        "title": "Command CV",
+        "ENTRYTYPE": "article",
+        "ID": "Whitlaw_2002",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "59\u201383",
+        "month": NaN,
+        "year": "2001",
+        "author": "Barbas, Samantha",
+        "publisher": "Palgrave Macmillan US",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1007/978-1-137-10319-2_4",
+        "url": "http://dx.doi.org/10.1007/978-1-137-10319-2_4",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "The Chance of a Lifetime",
+        "ENTRYTYPE": "inbook",
+        "ID": "Barbas_2001",
+        "booktitle": "Movie Crazy",
+        "isbn": "9781137103192",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2001",
+        "author": "Reaney, Gilbert",
+        "publisher": "Oxford University Press",
+        "journal": "Oxford Music Online",
+        "number": NaN,
+        "doi": "10.1093/gmo/9781561592630.article.24366",
+        "url": "http://dx.doi.org/10.1093/gmo/9781561592630.article.24366",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Sale",
+        "ENTRYTYPE": "misc",
+        "ID": "Reaney_2001",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "February",
+        "year": "2021",
+        "author": "Fuchs, Christian",
+        "publisher": "utb GmbH",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.36198/9783838555003",
+        "url": "http://dx.doi.org/10.36198/9783838555003",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Soziale Medien und Kritische Theorie: Eine Einf\u00fchrung",
+        "ENTRYTYPE": "book",
+        "ID": "Fuchs_2021",
+        "booktitle": NaN,
+        "isbn": "9783838555003",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "29\u201344",
+        "month": "January",
+        "year": "2011",
+        "author": "Sykora, Katharina",
+        "publisher": "Brill | Fink",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.30965/9783846751336_004",
+        "url": "http://dx.doi.org/10.30965/9783846751336_004",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Verrutschte S\u00e4ume: Aneta Grzeszykowska re-inszeniert die Untitled Film Stills",
+        "ENTRYTYPE": "inbook",
+        "ID": "Sykora_2011",
+        "booktitle": "Re-Inszenierte Fotografie",
+        "isbn": "9783770551330",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "128\u2013145",
+        "month": "June",
+        "year": "2023",
+        "author": "Wallace, Andrea",
+        "publisher": "Edward Elgar Publishing",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.4337/9781800881006.00017",
+        "url": "http://dx.doi.org/10.4337/9781800881006.00017",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Arts in IP law programmes: employing arts study, practice and pedagogy in law programmes - when students become creators",
+        "ENTRYTYPE": "inbook",
+        "ID": "Wallace_2023",
+        "booktitle": "Teaching Intellectual Property Law",
+        "isbn": "9781800881006",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "May",
+        "year": "2023",
+        "author": "Hendershott-Kraetzer, Kirk",
+        "publisher": "Arizona Center for Medieval and Renaissance Studies",
+        "journal": "Borrowers and Lenders The Journal of Shakespeare Appropriations",
+        "number": "1",
+        "doi": "10.18274/vajm9689",
+        "url": "http://dx.doi.org/10.18274/vajm9689",
+        "issn": "1554-6985",
+        "volume": "10",
+        "title": "Juliet, I Prosume? or Shakespeare and the Social Network",
+        "ENTRYTYPE": "article",
+        "ID": "Hendershott_Kraetzer_2023",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "March",
+        "year": "2018",
+        "author": "Johann, Michael and B\u00fclow, Lars",
+        "publisher": "Staats- und Universitatsbibliothek Hamburg Carl von Ossietzky",
+        "journal": "kommunikation@gesellschaft",
+        "number": "2",
+        "doi": "10.15460/kommges.2018.19.2.599",
+        "url": "http://dx.doi.org/10.15460/kommges.2018.19.2.599",
+        "issn": "1616-2617",
+        "volume": "19",
+        "title": "Die Verbreitung von Internet-Memes: Empirische Befunde zur Diffusion von Bild-Sprache-Texten in den sozialen Medien",
+        "ENTRYTYPE": "article",
+        "ID": "Johann_2018",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "June",
+        "year": "2015",
+        "author": "Thackeray, William Makepeace",
+        "publisher": "Oxford University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1093/owc/9780198727712.001.0001",
+        "url": "http://dx.doi.org/10.1093/owc/9780198727712.001.0001",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Vanity Fair",
+        "ENTRYTYPE": "book",
+        "ID": "Thackeray_2015",
+        "booktitle": NaN,
+        "isbn": "9780191919985",
+        "collection": NaN,
+        "series": NaN,
+        "editor": "Small, Helen",
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "442\u2013447",
+        "month": "October",
+        "year": "2008",
+        "author": "Desbuissons, F.",
+        "publisher": "Oxford University Press (OUP)",
+        "journal": "Oxford Art Journal",
+        "number": "3",
+        "doi": "10.1093/oxartj/kcn039",
+        "url": "http://dx.doi.org/10.1093/oxartj/kcn039",
+        "issn": "1741-7287",
+        "volume": "31",
+        "title": "In Media Res",
+        "ENTRYTYPE": "article",
+        "ID": "Desbuissons_2008",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "273\u2013283",
+        "month": "September",
+        "year": "2007",
+        "author": "Holmes, Tiffany",
+        "publisher": "Informa UK Limited",
+        "journal": "Journal of Museum Education",
+        "number": "3",
+        "doi": "10.1080/10598650.2007.11510577",
+        "url": "http://dx.doi.org/10.1080/10598650.2007.11510577",
+        "issn": "2051-6169",
+        "volume": "32",
+        "title": "Eco-Visualization: Promoting Environmental Stewardship in the Museum",
+        "ENTRYTYPE": "article",
+        "ID": "Holmes_2007",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2015",
+        "author": "Bonneau, Sonya G.",
+        "publisher": "Elsevier BV",
+        "journal": "SSRN Electronic Journal",
+        "number": NaN,
+        "doi": "10.2139/ssrn.2641027",
+        "url": "http://dx.doi.org/10.2139/ssrn.2641027",
+        "issn": "1556-5068",
+        "volume": NaN,
+        "title": "Ex Post Modernism: How the First Amendment Framed Nonrepresentational Art",
+        "ENTRYTYPE": "article",
+        "ID": "Bonneau_2015",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "September",
+        "year": "2012",
+        "author": "Weintraub, Linda",
+        "publisher": "University of California Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1525/9780520954236",
+        "url": "http://dx.doi.org/10.1525/9780520954236",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "To Life!: Eco Art in Pursuit of a Sustainable Planet",
+        "ENTRYTYPE": "book",
+        "ID": "Weintraub_2012",
+        "booktitle": NaN,
+        "isbn": "9780520954236",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "December",
+        "year": "2012",
+        "author": NaN,
+        "publisher": "New York University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.18574/nyu/9780814764077.001.0001",
+        "url": "http://dx.doi.org/10.18574/nyu/9780814764077.001.0001",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "The Social Media Reader",
+        "ENTRYTYPE": "book",
+        "ID": "2012",
+        "booktitle": NaN,
+        "isbn": "9780814764077",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "133\u2013135",
+        "month": "April",
+        "year": "2011",
+        "author": "Mullen, Lawrence",
+        "publisher": "Informa UK Limited",
+        "journal": "Visual Communication Quarterly",
+        "number": "2",
+        "doi": "10.1080/15551393.2011.574075",
+        "url": "http://dx.doi.org/10.1080/15551393.2011.574075",
+        "issn": "1555-1407",
+        "volume": "18",
+        "title": "A Review of \u201cDigital Foundations: Intro to Media Design\u201d: by xtine burrough &amp; Michael Mandiberg, 334 pages New Riders with AIGA Design Press 2009",
+        "ENTRYTYPE": "article",
+        "ID": "Mullen_2011",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "37\u201338",
+        "month": "July",
+        "year": "2009",
+        "author": "Conner, Jill",
+        "publisher": "University of California Press",
+        "journal": "Afterimage",
+        "number": "1",
+        "doi": "10.1525/aft.2009.37.1.37",
+        "url": "http://dx.doi.org/10.1525/aft.2009.37.1.37",
+        "issn": "0300-7472",
+        "volume": "37",
+        "title": "Frames of Fear",
+        "ENTRYTYPE": "article",
+        "ID": "Conner_2009",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "June",
+        "year": "2023",
+        "author": "Messina, Giuseppe Manuel",
+        "publisher": "Universidad Nacional de Rosario",
+        "journal": "Estudios Sociales del Estado",
+        "number": "17",
+        "doi": "10.35305/ese.v9i17.219",
+        "url": "http://dx.doi.org/10.35305/ese.v9i17.219",
+        "issn": "2422-7803",
+        "volume": "9",
+        "title": "Expansi\u00f3n, fragmentaci\u00f3n y desigualdad en el sistema previsional argentino (2003-2019)",
+        "ENTRYTYPE": "article",
+        "ID": "Messina_2023",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "87\u2013104",
+        "month": NaN,
+        "year": "2007",
+        "author": NaN,
+        "publisher": "Bloomsbury Publishing Plc",
+        "journal": "Celine Dion\u2019s Let\u2019s Talk About Love",
+        "number": NaN,
+        "doi": "10.5040/9781501396809.ch-008",
+        "url": "http://dx.doi.org/10.5040/9781501396809.ch-008",
+        "issn": NaN,
+        "volume": NaN,
+        "title": NaN,
+        "ENTRYTYPE": "misc",
+        "ID": "2007",
+        "booktitle": NaN,
+        "isbn": "9780826427885",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "59\u201376",
+        "month": "January",
+        "year": "2022",
+        "author": "Irvin, Sherri",
+        "publisher": "Oxford University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1093/oso/9780199688210.003.0004",
+        "url": "http://dx.doi.org/10.1093/oso/9780199688210.003.0004",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Rules for Conservation",
+        "ENTRYTYPE": "inbook",
+        "ID": "Irvin_2022",
+        "booktitle": "Immaterial",
+        "isbn": "9780191767524",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "133\u2013143",
+        "month": "October",
+        "year": "2020",
+        "author": "Bohannon, Richard",
+        "publisher": "Cornell University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.7591/cornell/9781501750915.003.0017",
+        "url": "http://dx.doi.org/10.7591/cornell/9781501750915.003.0017",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Little Brown Birds",
+        "ENTRYTYPE": "inbook",
+        "ID": "Bohannon_2020",
+        "booktitle": "When Birds Are Near",
+        "isbn": "9781501750939",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "33-2537-33\u20132537",
+        "month": "January",
+        "year": "1996",
+        "author": NaN,
+        "publisher": "American Library Association",
+        "journal": "Choice Reviews Online",
+        "number": "05",
+        "doi": "10.5860/choice.33-2537",
+        "url": "http://dx.doi.org/10.5860/choice.33-2537",
+        "issn": "1523-8253",
+        "volume": "33",
+        "title": NaN,
+        "ENTRYTYPE": "article",
+        "ID": "1996",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "107\u2013119",
+        "month": NaN,
+        "year": "2016",
+        "author": NaN,
+        "publisher": "SAGE Publications Ltd",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.4135/9781473983939.n9",
+        "url": "http://dx.doi.org/10.4135/9781473983939.n9",
+        "issn": NaN,
+        "volume": NaN,
+        "title": NaN,
+        "ENTRYTYPE": "inbook",
+        "ID": "2016",
+        "booktitle": "Leading for Equality: Making Schools Fairer",
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "1442\u20131449",
+        "month": "December",
+        "year": "2019",
+        "author": "Chen, Muhao and Meng, Changping and Huang, Gang and Zaniolo, Carlo",
+        "publisher": "IEEE",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1109/bigdata47090.2019.9005578",
+        "url": "http://dx.doi.org/10.1109/bigdata47090.2019.9005578",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Learning to Differentiate Between Main-articles and Sub-articles in Wikipedia",
+        "ENTRYTYPE": "inproceedings",
+        "ID": "Chen_2019",
+        "booktitle": "2019 IEEE International Conference on Big Data (Big Data)",
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": NaN,
+        "author": NaN,
+        "publisher": "Springer-Verlag",
+        "journal": "SpringerReference",
+        "number": NaN,
+        "doi": "10.1007/springerreference_13906",
+        "url": "http://dx.doi.org/10.1007/springerreference_13906",
+        "issn": NaN,
+        "volume": NaN,
+        "title": NaN,
+        "ENTRYTYPE": "misc",
+        "ID": "1",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2015",
+        "author": "Eriksson, Olivia",
+        "publisher": "Amsterdam University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.25969/MEDIAREP/15191",
+        "url": "https://mediarep.org/handle/doc/3374",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Reaching out!: Activating space in the art of Olafur Eliasson",
+        "ENTRYTYPE": "misc",
+        "ID": "https://doi.org/10.25969/mediarep/15191",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+        "keywords": "Kunstausstellung, Installation, Kunst, K\u00f6rper, Bewegung, Olafur Eliasson, Louisiana Museum of Modern Art, art exhibition, installation, art, body, movement, Fredensborg-Humlebaek, 791",
+        "language": "en"
+    },
+    {
+        "pages": "383\u2013388",
+        "month": NaN,
+        "year": "2010",
+        "author": "D. Morris, Ian",
+        "publisher": "American Institute of Mathematical Sciences (AIMS)",
+        "journal": "Discrete &amp; Continuous Dynamical Systems - A",
+        "number": "1",
+        "doi": "10.3934/dcds.2010.27.383",
+        "url": "http://dx.doi.org/10.3934/dcds.2010.27.383",
+        "issn": "1553-5231",
+        "volume": "27",
+        "title": "Ergodic optimization for generic continuous functions",
+        "ENTRYTYPE": "article",
+        "ID": "D_Morris_2010",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2010",
+        "author": "Hurd, Michael D. and Rohwedder, Susann",
+        "publisher": "Elsevier BV",
+        "journal": "SSRN Electronic Journal",
+        "number": NaN,
+        "doi": "10.2139/ssrn.1713953",
+        "url": "http://dx.doi.org/10.2139/ssrn.1713953",
+        "issn": "1556-5068",
+        "volume": NaN,
+        "title": "Effects of the Financial Crisis and Great Recession on American Households",
+        "ENTRYTYPE": "article",
+        "ID": "Hurd_2010",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "260\u2013261",
+        "month": "December",
+        "year": "2006",
+        "author": NaN,
+        "publisher": "Georg Thieme Verlag KG",
+        "journal": "intensiv",
+        "number": "06",
+        "doi": "10.1055/s-2006-927341",
+        "url": "http://dx.doi.org/10.1055/s-2006-927341",
+        "issn": "1439-3840",
+        "volume": "14",
+        "title": NaN,
+        "ENTRYTYPE": "article",
+        "ID": "2006",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "109\u2013112",
+        "month": NaN,
+        "year": "2001",
+        "author": "van Noordwijk, Jacob",
+        "publisher": "Springer Netherlands",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1007/978-94-010-0900-3_15",
+        "url": "http://dx.doi.org/10.1007/978-94-010-0900-3_15",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Has Kolff Reached his Goal?",
+        "ENTRYTYPE": "inbook",
+        "ID": "van_Noordwijk_2001",
+        "booktitle": "Dialysing for Life",
+        "isbn": "9789401009003",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2006",
+        "author": "Clancy, Kevin J. and Krieg, Peter C. and Wolf, Marianne McGarry",
+        "publisher": "Lexington Books",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.5771/9780739157510",
+        "url": "http://dx.doi.org/10.5771/9780739157510",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Market New Products Successfully: Using Simulated Test Market Technology",
+        "ENTRYTYPE": "book",
+        "ID": "Clancy_2006",
+        "booktitle": NaN,
+        "isbn": "9780739157510",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "December",
+        "year": "2016",
+        "author": "Barnes, William",
+        "publisher": "Oxford University Press",
+        "journal": "Oxford Handbooks Online",
+        "number": NaN,
+        "doi": "10.1093/oxfordhb/9780199341962.013.23",
+        "url": "http://dx.doi.org/10.1093/oxfordhb/9780199341962.013.23",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Aztec Art, Time, and Cosmovisi\u00f3n",
+        "ENTRYTYPE": "book",
+        "ID": "Barnes_2016",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": "Nichols, Deborah L. and Rodr\u00edguez-Alegr\u00eda, Enrique",
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "67\u201374",
+        "month": NaN,
+        "year": "2016",
+        "author": "Puentes Morantes, Jorge Leonardo and Ortiz Guevara, Nancy Yurani and Rodriguez Molano, Jos\u00e9 Ignacio",
+        "publisher": "Springer International Publishing",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1007/978-3-319-40973-3_7",
+        "url": "http://dx.doi.org/10.1007/978-3-319-40973-3_7",
+        "issn": "1611-3349",
+        "volume": NaN,
+        "title": "Model Proposal of Knowledge Management for Technology Based Companies",
+        "ENTRYTYPE": "inbook",
+        "ID": "Puentes_Morantes_2016",
+        "booktitle": "Data Mining and Big Data",
+        "isbn": "9783319409733",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "December",
+        "year": "2012",
+        "author": "Cyrot, Pascal and Jeunesse, Christophe",
+        "publisher": "OpenEdition",
+        "journal": "Distances et m\u00e9diations des savoirs",
+        "number": "1",
+        "doi": "10.4000/dms.137",
+        "url": "http://dx.doi.org/10.4000/dms.137",
+        "issn": "2264-7228",
+        "volume": "1",
+        "title": "Autoformation et r\u00e9seaux virtuels: Ou \u00e0 la recherche des traces autoformatives dans les m\u00e9andres r\u00e9ticulaires de Youtube",
+        "ENTRYTYPE": "article",
+        "ID": "Cyrot_2012",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "10",
+        "month": "June",
+        "year": "2015",
+        "author": "Morris, Caile",
+        "publisher": "Pace University Press",
+        "journal": "Pace Intellectual Property, Sports &amp; Entertainment Law Forum",
+        "number": "1",
+        "doi": "10.58948/2329-9894.1043",
+        "url": "http://dx.doi.org/10.58948/2329-9894.1043",
+        "issn": "2329-9894",
+        "volume": "5",
+        "title": "Transforming \u201cTransformative Use\u201d: The Growing Misinterpretation of the Fair Use Doctrine",
+        "ENTRYTYPE": "article",
+        "ID": "Morris_2015",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "134\u2013168",
+        "month": "June",
+        "year": "2018",
+        "author": "Chico, Tita",
+        "publisher": "Stanford University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.11126/stanford/9781503605442.003.0006",
+        "url": "http://dx.doi.org/10.11126/stanford/9781503605442.003.0006",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "When Science Becomes Literature",
+        "ENTRYTYPE": "inbook",
+        "ID": "Chico_2018",
+        "booktitle": "The Experimental Imagination",
+        "isbn": "9781503606456",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "May",
+        "year": "2016",
+        "author": NaN,
+        "publisher": "Routledge",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.4324/9781315023663",
+        "url": "http://dx.doi.org/10.4324/9781315023663",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Feminist Visual Culture",
+        "ENTRYTYPE": "book",
+        "ID": "2016",
+        "booktitle": NaN,
+        "isbn": "9781136708534",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2001",
+        "author": "Wyman, Max",
+        "publisher": "Oxford University Press",
+        "journal": "Oxford Music Online",
+        "number": NaN,
+        "doi": "10.1093/gmo/9781561592630.article.28975",
+        "url": "http://dx.doi.org/10.1093/gmo/9781561592630.article.28975",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Vancouver",
+        "ENTRYTYPE": "misc",
+        "ID": "Wyman_2001",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "e067",
+        "month": "October",
+        "year": "2022",
+        "author": "Terzaghi, Mar\u00eda Teresa",
+        "publisher": "Universidad Nacional de La Plata",
+        "journal": "Cuadernos de H ideas",
+        "number": "16",
+        "doi": "10.24215/23139048e067",
+        "url": "http://dx.doi.org/10.24215/23139048e067",
+        "issn": "2313-9048",
+        "volume": "16",
+        "title": "Rese\u00f1a a Adri\u00e1n Cammarota (2021). Malas maestras. Educaci\u00f3n, g\u00e9nero y conflicto en el sistema escolar argentino: Ciudad Aut\u00f3noma de Buenos Aires, Grupo Editor Universitario, 97 pp.",
+        "ENTRYTYPE": "article",
+        "ID": "Terzaghi_2022",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "January",
+        "year": "2022",
+        "author": "Irvin, Sherri",
+        "publisher": "Oxford University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1093/oso/9780199688210.001.0001",
+        "url": "http://dx.doi.org/10.1093/oso/9780199688210.001.0001",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Immaterial: Rules in Contemporary Art",
+        "ENTRYTYPE": "book",
+        "ID": "Irvin_2022",
+        "booktitle": NaN,
+        "isbn": "9780191767524",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "October",
+        "year": "2016",
+        "author": "Adrienne, Stone",
+        "publisher": "Oxford University Press",
+        "journal": "Max Planck Encyclopedia of Comparative Constitutional Law",
+        "number": NaN,
+        "doi": "10.1093/law-mpeccol/e559.013.559",
+        "url": "http://dx.doi.org/10.1093/law-mpeccol/e559.013.559",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "New York Times v Sullivan Case (US)",
+        "ENTRYTYPE": "misc",
+        "ID": "Adrienne_2016",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "February",
+        "year": "2014",
+        "author": "Sanchez, Ernest",
+        "publisher": "Oxford University Press (OUP)",
+        "journal": "Oxford Bibliographies Online Datasets",
+        "number": NaN,
+        "doi": "10.1093/obo/9780199913701-0079",
+        "url": "http://dx.doi.org/10.1093/obo/9780199913701-0079",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Public Radio",
+        "ENTRYTYPE": "misc",
+        "ID": "Sanchez_2014",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2012",
+        "author": "Shanken, Edward A.",
+        "publisher": "Amsterdam University Press",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.25969/MEDIAREP/15050",
+        "url": "https://mediarep.org/handle/doc/3202",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "Investigatory art \u2013 Real-time systems and network culture",
+        "ENTRYTYPE": "article",
+        "ID": "https://doi.org/10.25969/mediarep/15050",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+        "keywords": "K\u00fcnste, Kultur, Netzwerk, Echtzeitsystem, art, culture, network, real-time, 791",
+        "language": "en"
+    },
+    {
+        "pages": "225\u2013235",
+        "month": "January",
+        "year": "2010",
+        "author": "S\u00e4rkk\u00e4, Simo",
+        "publisher": "Elsevier BV",
+        "journal": "Signal Processing",
+        "number": "1",
+        "doi": "10.1016/j.sigpro.2009.06.012",
+        "url": "http://dx.doi.org/10.1016/j.sigpro.2009.06.012",
+        "issn": "0165-1684",
+        "volume": "90",
+        "title": "Continuous-time and continuous\u2013discrete-time unscented Rauch\u2013Tung\u2013Striebel smoothers",
+        "ENTRYTYPE": "article",
+        "ID": "S_rkk__2010",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": "July",
+        "year": "2010",
+        "author": "Heng, Michael Siam-Heng",
+        "publisher": "WORLD SCIENTIFIC",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1142/7801",
+        "url": "http://dx.doi.org/10.1142/7801",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "The Great Recession: History, Ideology, Hubris and Nemesis",
+        "ENTRYTYPE": "book",
+        "ID": "Heng_2010",
+        "booktitle": NaN,
+        "isbn": "9789814313414",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "27\u201327",
+        "month": "June",
+        "year": "2006",
+        "author": NaN,
+        "publisher": "Walter de Gruyter GmbH",
+        "journal": "Public Health Forum",
+        "number": "2",
+        "doi": "10.1515/pubhef-2006-2301",
+        "url": "http://dx.doi.org/10.1515/pubhef-2006-2301",
+        "issn": "0944-5587",
+        "volume": "14",
+        "title": NaN,
+        "ENTRYTYPE": "article",
+        "ID": "2006",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": NaN,
+        "month": NaN,
+        "year": "2007",
+        "author": "Brubaker, Lowell",
+        "publisher": "Portico",
+        "journal": "PsycCRITIQUES",
+        "number": "15",
+        "doi": "10.1037/a0006670",
+        "url": "http://dx.doi.org/10.1037/a0006670",
+        "issn": "1554-0138",
+        "volume": "52",
+        "title": "In the Now: Online in Real Time",
+        "ENTRYTYPE": "article",
+        "ID": "Brubaker_2007",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": "Wedding, Danny",
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "442\u2013443",
+        "month": "October",
+        "year": "2016",
+        "author": "Knox, Gordon",
+        "publisher": "MIT Press - Journals",
+        "journal": "Leonardo",
+        "number": "5",
+        "doi": "10.1162/leon_a_01294",
+        "url": "http://dx.doi.org/10.1162/leon_a_01294",
+        "issn": "1530-9282",
+        "volume": "49",
+        "title": "Art/Science &amp; Big Data: Parts 1, 2 and 3",
+        "ENTRYTYPE": "article",
+        "ID": "Knox_2016",
+        "booktitle": NaN,
+        "isbn": NaN,
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
+    },
+    {
+        "pages": "171\u2013178",
+        "month": NaN,
+        "year": "2015",
+        "author": "Golbeck, Jennifer",
+        "publisher": "Elsevier",
+        "journal": NaN,
+        "number": NaN,
+        "doi": "10.1016/b978-0-12-801656-5.00016-0",
+        "url": "http://dx.doi.org/10.1016/b978-0-12-801656-5.00016-0",
+        "issn": NaN,
+        "volume": NaN,
+        "title": "YouTube",
+        "ENTRYTYPE": "inbook",
+        "ID": "Golbeck_2015",
+        "booktitle": "Introduction to Social Media Investigation",
+        "isbn": "9780128016565",
+        "collection": NaN,
+        "series": NaN,
+        "editor": NaN,
+        "copyright": NaN,
+        "keywords": NaN,
+        "language": NaN
     }
 ]

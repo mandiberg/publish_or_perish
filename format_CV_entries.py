@@ -11,12 +11,14 @@ from habanero import Crossref
 from thefuzz import fuzz, process
 import csv
 import time
+import re
 
 # Load CSV data
 input_file = 'cleaned_data.csv'
 cv_output_path = 'cv_entries.rtf'
 JSON_FILE = "bibtex_entries.json"
 NO_DOI_FILE = "no_doi.csv"
+CROSSWALK_FILE = "crosswalk.csv"
 EXCLUDE_PROJECTS = ["turbulece.org", "wikipedia", "eyebeam"]
 SECTIONS = [
     "Historical Inclusion",
@@ -37,28 +39,57 @@ VERBOSE = False
 
 # Read CSV
 df = pd.read_csv(input_file)
-try: 
-    df_no_doi = pd.read_csv(NO_DOI_FILE) 
-except: 
-    df_no_doi = pd.DataFrame()
-    # create the file with headers
-    with open(NO_DOI_FILE, 'w', newline='') as no_doi_file:
-        writer = csv.writer(no_doi_file)
-        writer.writerow(["Authors", "Title", "Year"])
+# def load_no_doi_file():
+#     try:
+#         df_no_doi = pd.read_csv(NO_DOI_FILE)
+#     except:
+#         df_no_doi = pd.DataFrame()
+#         # create the file with headers
+#         with open(NO_DOI_FILE, 'w', newline='') as no_doi_file:
+#             writer = csv.writer(no_doi_file)
+#             writer.writerow(["Authors", "Title", "Year", "Source"])
+#     return df_no_doi
+
+def load_csv(csv_file,header):
+    try:
+        df = pd.read_csv(csv_file)
+        df.drop_duplicates()
+    except:
+        df = pd.DataFrame()
+        # create the file with headers
+        with open(csv_file, 'a', newline='') as csv_file:
+            writer = csv.writer(csv_file,header)
+            writer.writerow(header)
+    return df
+
+# df_no_doi = load_no_doi_file()
+df_no_doi = load_csv(NO_DOI_FILE, ["Authors", "Title", "Year", "Source"])
+df_crosswalk = load_csv(CROSSWALK_FILE, ["Authors", "Title", "Year", "ID"])
+
+print(df_no_doi)
+print(df_crosswalk)
 
 def unicode_to_rtf(text):
-    """Convert Unicode characters to RTF escape sequences."""
+    """Convert Unicode characters to RTF escape sequences.
+    If a word is all capitals, convert it to title case before encoding."""
     if pd.isna(text):
         return ""
     
+    # Split the text preserving punctuation and whitespace
+    parts = re.split(r'(\W+)', str(text))
     rtf_text = ""
-    for char in str(text):
-        # Handle ASCII characters
-        if ord(char) < 128:
-            rtf_text += char
-        # Handle Unicode characters
-        else:
-            rtf_text += f"\\u{ord(char)}?"
+    list_of_words = ['LGBTQ','WP']
+    for part in parts:
+        # If the part is a word in all capitals (and longer than one letter), convert it
+        if part.isupper() and len(part) > 1 and not any(word in part for word in list_of_words):
+            part = part.title()
+        for char in part:
+            # Handle ASCII characters
+            if ord(char) < 128:
+                rtf_text += char
+            # Handle Unicode characters
+            else:
+                rtf_text += f"\\u{ord(char)}?"
     return rtf_text
 
 def float_to_int(value):
@@ -121,7 +152,7 @@ def get_bibtex_entries(df):
     df_bibtex = load_bibtex_entries()
     doi_list = df['DOI'].tolist()
     # drop na and 0 and " " values
-    doi_list = [doi for doi in doi_list if pd.notna(doi) and doi != 0 and doi != " "]
+    doi_list = [doi for doi in doi_list if pd.notna(doi) and doi != 0 and doi != " " and "/" in doi]
     print("doi_list", doi_list)
     # Get DOIs that are not already in the existing entries
     # save them all to json file
@@ -168,7 +199,7 @@ def flatten_crossref_data(data):
             flattened["ENTRYTYPE"] = "unknown"
         return flattened
 
-    print("Flattening data", data)
+    # print("Flattening data", data)
     """
     Flatten Crossref API response data into a one-dimensional dictionary
     similar to bibliography entries.
@@ -271,7 +302,7 @@ def find_index(df, value, search_column):
         if pd.isna(search_column_value): continue
         if fuzzy_test(value,search_column_value):
             matched_index = columns
-            print("Matched index", matched_index)
+            print("  find index: Matched index", matched_index)
         # string_length = len(value)
         # search_column_value = search_column_value[:string_length]
         # matched_token=fuzz.partial_ratio(value,search_column_value)
@@ -285,160 +316,186 @@ def find_index(df, value, search_column):
 def search_crossref(df):
     df_bibtex = load_bibtex_entries()
     cr = Crossref()
-    df = df.head(50)
-    if len(df_no_doi) > 0: no_doi_titles = df_no_doi['Title'].to_list()
+    df = df.head(560)
+    if not df_no_doi.empty: no_doi_titles = df_no_doi['Title'].to_list()
     else: no_doi_titles = []
     for index, row in df.iterrows():
         matched_index = None
         flattened_data = None
         doi = row['DOI']
         no_doi = None
-        print("Processing row", row)
-        print("Processing rowTitle", row['Title'])
+        # print("Processing row", row)
+        # print("Processing rowTitle", row['Title'])
         # check to see if we have already failed to look up this DOI
         if row['Title'] in no_doi_titles:
-            print("Already failed to find DOI for", row['Title'])
+            print("- Already failed to find DOI for", row['Title'])
             continue
-        if pd.notna(doi) and doi != 0 and "/" in doi:
-            if doi not in df_bibtex['doi'].tolist():
-                print("Searching for DOI:", doi)
+        elif not df_crosswalk.empty and row['Title'] in df_crosswalk['Title'].to_list():
+            crosswalk_index = find_index(df_crosswalk, row['Title'], "Title")
+            if crosswalk_index:
+                # print("crosswalk index", crosswalk_index)
+                cross_year = df_crosswalk.loc[crosswalk_index]["Year"]
                 try:
-                    result = cr.works(doi)
-                except:
-                    print("Error in searching crossref for DOI", doi)
-                    continue
-                if result['status'] == 'ok':
-                    data = result['message']
-                    flattened_data = flatten_crossref_data(data)
-                    print("searched crossref via DOI and found", flattened_data)
-                    if flattened_data['doi'] not in df_bibtex['doi'].to_list():
+                    if int(float(row['Year'])) == int(float(cross_year)):
+                        print("+ Already found CROSSWALK for", row['Title'])
+                        flattened_data = df_bibtex.loc[df_bibtex['ID'] == df_crosswalk.loc[crosswalk_index]["ID"]].to_dict(orient='records')[0]
+                        # print("== flattened_data from crosswalk", flattened_data)
+                except ValueError:
+                    print(f"Skipping invalid year comparison for {row['Title']}: {row['Year']} vs {cross_year}")
+
+        else: 
+            # new search OR crosswalk needed
+            if pd.notna(doi) and doi != 0 and "/" in doi:
+                # if there is a doi
+                if doi not in df_bibtex['doi'].tolist():
+                    # and it isn't in the bibtex entries, search for it
+                    print("Searching for DOI:", doi)
+                    try:
+                        result = cr.works(doi)
+                    except:
+                        print("Error in searching crossref for DOI", doi)
+                        continue
+                    if result['status'] == 'ok':
+                        data = result['message']
+                        flattened_data = flatten_crossref_data(data)
+                        print("searched crossref via DOI and found", flattened_data)
+                        if flattened_data['doi'] not in df_bibtex['doi'].to_list():
+                            # Append the new entry to the existing DataFrame
+                            df_bibtex = df_bibtex.append(flattened_data, ignore_index=True)
+                        else:
+                            print("+ DOI already in bibtex entries, not adding", row['Title'])
+                else:
+                    pass
+                    print("+ DOI already in bibtex entries", row['Title'])
+                    flattened_data = df_bibtex.loc[df_bibtex['doi'] == doi].to_dict(orient='records')[0]
+                    print("flattened_data from bibtex", flattened_data)
+            else:
+                # no DOI
+                # look for the entry the bibtex entries by row['Authors']} {row['Title']} {row['Year']} {row['Source']
+                if not pd.isna(row['Title']):
+                    print("Searching existing bibtex for query:", row['Authors'], row['Title'], row['Year'], row['Source'])
+                    matched_index = find_index(df_bibtex, row['Title'], "title")
+                    if VERBOSE: print("Matched index TITLE", matched_index)
+                if not matched_index and not pd.isna(row['Source']):
+                    matched_index = find_index(df_bibtex, row['Source'], "title")
+                    if VERBOSE: print("Matched index SOURCE", matched_index)
+                if matched_index is None:
+                    if not pd.isna(row['Authors']):
+                        matched_index = find_index(df_bibtex, row['Authors'], "author")
+                        if VERBOSE: print("Matched index AUTHOR", matched_index)
+                    if not matched_index:
+                        matched_index = find_index(df_bibtex, row['Source'], "journal")
+                        if matched_index:
+                            # TK this is wrong, it needs to send in based on index
+                            # and it needs to be replicated for each of these where index is matched
+                            # maybe below at line 400?
+                            matched_index = find_index(df_bibtex, row['Date'], "year")
+                            if VERBOSE: print("Matched SOURCE YEAR already crossrefed", matched_index, df_bibtex.loc[matched_index]["title"])
+                        else:
+                            if VERBOSE: print("No SOURCE YEAR match found for query:", row['Authors'], row['Title'], row['Year'], row['Source'])
+                    print("after everything, match_index is", matched_index)
+
+                if matched_index is not None:
+                    print("~ Matched index TITLE already crossrefed", matched_index, df_bibtex.loc[matched_index]["title"])
+                    flattened_data = df_bibtex.loc[matched_index].to_dict()
+                else:
+                    def test_year_author(row, flattened_data):
+                        authors = row.get('Authors', None)
+                        year = row.get('Year', None)
+                        flattened_author = flattened_data.get('author', None)
+                        flattened_year = flattened_data.get('year', None)
+                        is_match = False
+                        if not pd.isna(authors) and authors == flattened_author:
+                            # remove the first initial or two initials from author
+                            authors_list = authors.split(" ")
+                            for i, author in enumerate(authors_list):
+                                if len(author) <= 2:
+                                    authors_list.pop(i)
+                            authors = " ".join(authors_list)
+                            print("Matched AUTHOR", authors, flattened_author)
+                            is_match = True
+                        if is_match is False and not pd.isna(year) and year == flattened_year:
+                            print("Matched YEAR", year, flattened_year)
+                            is_match = True
+                        return is_match
+                    
+                    # NO DOI
+                    is_match = False
+                    query = f"{row['Authors']} {row['Title']} {row['Year']} {row['Source']}"
+                    print("Searching for query:", query)
+                    try:
+                        time.sleep(5)
+                        result = cr.works(query=query)
+                        if result['status'] == 'ok':
+                            for index, data in enumerate(result['message']['items']):
+                                # search all items for a match
+                                data = result['message']['items'][index]
+                                flattened_data = flatten_crossref_data(data)
+                                print("flattened_data from crossref search item", index, flattened_data)
+                                # test to see if the title OR source matches the resul
+                                if not pd.isna(flattened_data.get('title', None)):
+                                    if fuzzy_test(row['Title'],flattened_data['title']):
+                                        # print("Matched title", row['Title'], data['title'][index])
+                                        # check to see if the date matches
+                                        is_match = test_year_author(row, flattened_data)
+                                    elif fuzzy_test(row['Source'],flattened_data['title']):
+                                        # print("Matched SOURCE", row['Source'], data['title'][index])
+                                        is_match = test_year_author(row, flattened_data)
+                                elif test_year_author(row, flattened_data):
+                                    print("NO TITLE but Matched test_year_author", row, flattened_data)
+
+                                if is_match: break
+                                elif index == len(result['message']['items']) - 2 or index > 10: break
+                                # else: print("No match found for query:", query, flattened_data.get('title', None))
+
+                            if not is_match:
+                                # save to NO_DOI_FILE
+                                no_doi = [row['Authors'], row['Title'], row['Year'], row['Source']]
+                                with open(NO_DOI_FILE, 'a', newline='') as no_doi_file:
+                                    print("-- Writing to no_doi_file", no_doi)
+                                    writer = csv.writer(no_doi_file)
+                                    writer.writerow(no_doi)
+                    except RuntimeError as e:
+                        # sleep for 5 seconds
+                        time.sleep(25)
+                        print(f"RuntimeError: {e} for query: {query}")
+                        continue
+
+                    if is_match:
+                        # check to see if there is a DOI, and if so, get that bibtex to use bc it is better
+                        print("Searched and found:",flattened_data)
+                        if 'DOI' in data:
+                            flattened_data = doi_to_bibtex(flattened_data['doi'])
+                            print("bibtex from DOI", flattened_data)
+                        # else:
+                        #     flattened_data = flatten_crossref_data(data)
                         # Append the new entry to the existing DataFrame
                         df_bibtex = df_bibtex.append(flattened_data, ignore_index=True)
-                    else:
-                        print("DOI already in bibtex entries, not adding", row['Title'])
-            else:
-                pass
-                print("DOI already in bibtex entries", row['Title'])
-        else:
-            # check to see if the entry is already in the bibtex entries by row['Authors']} {row['Title']} {row['Year']} {row['Source']
-            if not pd.isna(row['Title']):
-                print("Searching existing bibtex for query:", row['Authors'], row['Title'], row['Year'], row['Source'])
-                matched_index = find_index(df_bibtex, row['Title'], "title")
-                if VERBOSE: print("Matched index TITLE", matched_index)
-            if not matched_index and not pd.isna(row['Source']):
-                matched_index = find_index(df_bibtex, row['Source'], "title")
-                if VERBOSE: print("Matched index SOURCE", matched_index)
-            if matched_index is None:
-                if not pd.isna(row['Authors']):
-                    matched_index = find_index(df_bibtex, row['Authors'], "author")
-                    if VERBOSE: print("Matched index AUTHOR", matched_index)
-                if not matched_index:
-                    matched_index = find_index(df_bibtex, row['Source'], "journal")
-                    if matched_index:
-                        matched_index = find_index(df_bibtex, row['Date'], "year")
-                        if VERBOSE: print("Matched SOURCE YEAR already crossrefed", matched_index, df_bibtex.loc[matched_index]["title"])
-                    else:
-                        if VERBOSE: print("No SOURCE YEAR match found for query:", row['Authors'], row['Title'], row['Year'], row['Source'])
-            if matched_index is None: 
-                matched_index = None
-                if VERBOSE: print("after everything, setting match to NONE")
-            # # vendor_name = vendor_df.get_value(row,"Name of vendor")
-            # string_length = len(row['Title'])
-            # for columns in df_bibtex.index:
-            #     doi_title = df_bibtex.at[columns, "title"][:string_length]
-            #     matched_token=fuzz.partial_ratio(row['Title'],doi_title)
-            #     print("matched_token", matched_token, row['Title'], doi_title)
-            #     if matched_token> 80:
-            #         matched_index = columns
-            #         print("Matched index", matched_index)
-            #         pass
-            #         # matched_vendors.append([vendor_name,regulated_vendor_name,matched_token])
-
-            if matched_index is not None:
-                print("Matched index TITLE already crossrefed", matched_index, df_bibtex.loc[matched_index]["title"])
-            else:
-                def test_year_author(row, flattened_data):
-                    authors = row.get('Authors', None)
-                    year = row.get('Year', None)
-                    flattened_author = flattened_data.get('author', None)
-                    flattened_year = flattened_data.get('year', None)
-                    is_match = False
-                    if not pd.isna(authors) and authors == flattened_author:
-                        # remove the first initial or two initials from author
-                        authors_list = authors.split(" ")
-                        for i, author in enumerate(authors_list):
-                            if len(author) <= 2:
-                                authors_list.pop(i)
-                        authors = " ".join(authors_list)
-                        print("Matched AUTHOR", authors, flattened_author)
-                        is_match = True
-                    if is_match is False and not pd.isna(year) and year == flattened_year:
-                        print("Matched YEAR", year, flattened_year)
-                        is_match = True
-                    return is_match
-                
-                # NO DOI
-                is_match = False
-                query = f"{row['Authors']} {row['Title']} {row['Year']} {row['Source']}"
-                print("Searching for query:", query)
-                try:
-                    time.sleep(5)
-                    result = cr.works(query=query)
-                    if result['status'] == 'ok':
-                        data = result['message']['items'][0]
-                        flattened_data = flatten_crossref_data(data)
-                        print(flattened_data)
-                        # test to see if the title OR source matches the resul
-                        if fuzzy_test(row['Title'],flattened_data['title']):
-                            print("Matched title", row['Title'], data['title'][0])
-                            # check to see if the date matches
-                            is_match = test_year_author(row, flattened_data)
-                        elif fuzzy_test(row['Source'],flattened_data['title']):
-                            print("Matched SOURCE", row['Source'], data['title'][0])
-                            is_match = test_year_author(row, flattened_data)
-                        else:
-                            print("No match found for query:", query, flattened_data['title'])
-                            # save to NO_DOI_FILE
-                            no_doi = [row['Authors'], row['Title'], row['Year'], row['Source']]
-                            with open(NO_DOI_FILE, 'a', newline='') as no_doi_file:
-                                print("Writing to no_doi_file", no_doi)
-                                writer = csv.writer(no_doi_file)
-                                writer.writerow(no_doi)
-                except RuntimeError as e:
-                    # sleep for 5 seconds
-                    time.sleep(25)
-                    print(f"RuntimeError: {e} for query: {query}")
-                    continue
-
-                if is_match:
-                    # check to see if there is a DOI, and if so, get that bibtex to use bc it is better
-                    print("Searched and found:",flattened_data)
-                    if 'DOI' in data:
-                        flattened_data = doi_to_bibtex(flattened_data['doi'])
-                        print("bibtex from DOI", flattened_data)
-                    # else:
-                    #     flattened_data = flatten_crossref_data(data)
-                    # Append the new entry to the existing DataFrame
-                    df_bibtex = df_bibtex.append(flattened_data, ignore_index=True)
         if flattened_data is not None and no_doi is None:
             print("going to add flattened_data", flattened_data)
             print("to this row of df", df.loc[index])
+            if not crosswalk_index:
+                crosswalk = [row['Authors'], row['Title'], row['Year'], flattened_data.get("ID", None)]
+                with open(CROSSWALK_FILE, 'a', newline='') as crosswalk_file:
+                    print("Writing to crosswalk", crosswalk)
+                    writer = csv.writer(crosswalk_file)
+                    writer.writerow(crosswalk)
             # add flattened_data to df index row
-            # for key, value in flattened_data.items():
-            #     bib_key = f"bib_{key}"
-            #     df.loc[index, bib_key] = value
+            for key, value in flattened_data.items():
+                bib_key = f"bib_{key}"
+                df.loc[index, bib_key] = value
 
-            #     key = "bib_"+key
-            #     df.loc[index, key] = value
-            df.loc[index, "bib_Authors"] = flattened_data.get("author", None)
-            df.loc[index, "bib_Title"] = flattened_data.get("title", None)
-            df.loc[index, "bib_booktitle"] = flattened_data.get("booktitle", None)
-            df.loc[index, "bib_journal"] = flattened_data.get("journal", None)
-            df.loc[index, "bib_issue"] = flattened_data.get("issue", None)
-            df.loc[index, "bib_number"] = flattened_data.get("number", None)
+                # key = "bib_"+key
+                # df.loc[index, key] = value
+            # df.loc[index, "bib_Authors"] = flattened_data.get("author", None)
+            # df.loc[index, "bib_Title"] = flattened_data.get("title", None)
+            # df.loc[index, "bib_booktitle"] = flattened_data.get("booktitle", None)
+            # df.loc[index, "bib_journal"] = flattened_data.get("journal", None)
+            # df.loc[index, "bib_volume"] = flattened_data.get("volume", None)
+            # df.loc[index, "bib_number"] = flattened_data.get("number", None)
             print("ADDED this row of df", df.loc[index])
         else:
-            print("No data for this row of df", df.loc[index])
+            print(" >< >< No flattened_data for this row of df", df.loc[index]['Title'])
 
 
 
@@ -446,7 +503,7 @@ def search_crossref(df):
             # add unique ID to df index. Non mutable.         "ID": "Wexelbaum_2019",
             # df.loc[index, "ID"] = flattened_data["ID"]
             # f"{flattened_data['author']}_{flattened_data['year']}"
-            print("Matched index", matched_index)
+            # print("Matched index", matched_index)
             # Append the new entry to the existing DataFrame
 
     # Write the combined entries back to JSON_FILE
@@ -490,7 +547,7 @@ def make_project_string(row):
     return project_str
 
 def format_authors(authors):
-    # print("parsing authors", authors)
+    print("parsing authors", authors)
     """
     Format author names from various input styles to 'Firstname Lastname' format.
     
@@ -501,24 +558,38 @@ def format_authors(authors):
         str: Formatted author names in 'Firstname Lastname' format
     """
     def parse_name(name):
+        print("parsing name", name)
+        if pd.isna(name) or name == "" or name == " ":
+            return name
         # Remove extra whitespace
         name = name.strip()
         
         # Check if name contains a comma (last name, first name format)
         if ',' in name:
-            # print("Comma in name", name)
+            print("Comma in name", name)
             parts = name.split(',')
+            # if len(parts[1]) == 2 and parts[1].strip().isupper():
+            #     parts[1] = parts[1][0]
             return f"{parts[1].strip()} {parts[0].strip()}"
         
         # Standard first name last name format
         parts = name.split()
+        if len(parts[0]) == 2 and parts[0].strip().isupper():
+            parts[0] = parts[0][1:]
+
         return name if len(parts) <= 2 else f"{' '.join(parts[:-1])} {parts[-1]}"
 
     # Split authors by semicolon or comma, and parse each
     if ";" in authors:
         author_list = [author.strip() for author in authors.split(';')]
+    elif "and" in authors:
+        author_list = [author.strip() for author in authors.split(' and ')]
     elif "," in authors:
         author_list = [author.strip() for author in authors.split(',')]
+        if len(author_list) == 2 and len(author_list[0].split()) == 1 and len(author_list[1].split()) == 1:
+            author_list = [authors]
+        # else:
+        #     author_list = [author_list[0]] + [" and ".join(author_list[1:])]
     else:
         author_list = [authors]
     # author_list = [author.strip() for author in authors.replace(';', ',').split(',')]
@@ -532,17 +603,18 @@ def format_authors(authors):
 
 def format_volume_issue(row):
     # format volume, issue
-    volume = row.get('pq_volume') or row.get('bib_volume') or row.get('Volume')
-    issue = row.get('pq_issue') or row.get('bib_issue') or row.get('Issue')
+    print("format_volume_issue full row", row)
+    volume = row['pq_volume'] if not pd.isna(row.get('pq_volume')) else row['bib_volume'] if not pd.isna(row.get('bib_volume')) else row['Volume']
+    issue = row['pq_issue'] if not pd.isna(row.get('pq_issue')) else row['bib_number'] if not pd.isna(row.get('bib_number')) else row['Issue']
 
     volume = float_to_int(volume)
     issue = float_to_int(issue)
 
     if volume is None and issue is None:
         return None
-    elif volume is None:
+    elif volume is None or volume == 0:
         return f"({issue})"
-    elif issue is None:
+    elif issue is None or issue == 0:
         return f"{volume}"
     else:
         return f"{volume}({issue})"
@@ -565,10 +637,16 @@ def make_cv_entry(row, project_str, show_year=True):
 
     type_dict = {
         "edited volume": "inbook",
+        "Ed. Book": "inbook",
+        "book chapter": "inbook",
         "book": "book",
-        "article": "article"
+        "article": "article",
+        "BA Thesis": "Thesis",
+        "Masters Thesis": "Thesis",
+        "Disseration": "Disseration"
     }
-    pub_type = row.get('ENTRYTYPE') if pd.notna(row.get('ENTRYTYPE')) else type_dict[row.get('Type')] if row.get('Type') in type_dict else None
+    
+    pub_type = row.get('ENTRYTYPE') if pd.notna(row.get('ENTRYTYPE')) else type_dict[row.get('culled_COMMENTS')] if row.get('culled_COMMENTS') in type_dict else type_dict[row.get('Type')] if row.get('Type') in type_dict else None
 
     # if not pd.isna(row['Type']) and type(row['Type']) != float:
     #     if row['Type'].lower() == "book" or not pd.isna(row['Chapter']):
@@ -613,7 +691,7 @@ def make_cv_entry(row, project_str, show_year=True):
 
     # format entry based on type
     if volume_issue is not None or pub_type == "article":
-        cv_entry += f"{authors}, \"{title},\" \\i {source}\\i0  {volume_issue}"
+        cv_entry += f"{authors}, \"{title},\" \\i {source}\\i0\~{volume_issue}"
     elif pub_type == "book":
         cv_entry += f"{authors}, \\i {title}, \\i0 {source}"
     elif pub_type == "inbook":
